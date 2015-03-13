@@ -61,3 +61,10 @@ select  count(city) as cnt
 from products
 group by city
 having count(city) = min(cnt)
+
+
+-- Returns number of products made in city that makes fewest number of products
+select min(cnt)
+from (select count(city) as cnt
+	from products
+	group by city) as foo

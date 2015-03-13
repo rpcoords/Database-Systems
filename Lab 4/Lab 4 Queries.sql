@@ -1,4 +1,8 @@
-
+----------------------------------------------------------------------------------------
+-- Lab 4 Queries
+-- Database Management
+-- @author Robert Coords
+----------------------------------------------------------------------------------------
 
 -- Query 1
 select city from agents
@@ -41,3 +45,6 @@ where discount in (select discount from customers
 				 where aid in (select aid from agents
 					       where city = 'Dallas' or city = 'London')));
 
+----------------------------------------------------------------------------------------
+-- Question 8:
+-- Please see pdf file in Lab 4 folder of GitHub repository.
