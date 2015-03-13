@@ -47,24 +47,13 @@ from customers c inner join agents a
 	on c.city = a.city
 
 -- Query 7
--- (Work in Progress)
-select *
-from products p left outer join customers c
-	on c.city = p.city
-
-group by p.pid, c.cid
-order by p.city desc
-
-
-
-select  count(city) as cnt
-from products
-group by city
-having count(city) = min(cnt)
-
-
--- Returns number of products made in city that makes fewest number of products
-select min(cnt)
-from (select count(city) as cnt
-	from products
-	group by city) as foo
+select c.name, c.city
+from customers c inner join (select foo3.city as leastCity
+	from (select min(cnt) as m
+		from (select city as c, count(city) as cnt
+			from products
+			group by c) as foo) as foo2 inner join (select city, count(city) as ct
+				from products
+				group by city) as foo3
+			on foo3.ct = foo2.m) as foo4 
+	on c.city = foo4.leastCity
