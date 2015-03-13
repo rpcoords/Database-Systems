@@ -6,7 +6,16 @@
 ----------------------------------------------------------------------------------------
 
 -- Query 1
-
+select c.name, c.city
+from customers c inner join (select foo3.city as maxCity
+	from (select max(cnt) as m
+		from (select city as c, count(city) as cnt
+			from products
+			group by c) as foo) as foo2 inner join (select city, count(city) as ct
+				from products
+				group by city) as foo3
+			on foo3.ct = foo2.m) as foo4 
+	on c.city = foo4.maxCity
 
 -- Query 2
 select name
@@ -22,7 +31,12 @@ from customers c inner join orders o
 order by o.dollars desc;
 
 -- Query 4
-
+select c.name, coalesce(foo.total_ordered, 0)
+from customers c left outer join (select cid, sum(qty) as total_ordered
+	from orders
+	group by cid) as foo 
+	on c.cid = foo.cid
+order by c.name desc 
 
 -- Query 5
 select c.name, p.name, a.name
