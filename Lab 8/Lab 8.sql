@@ -73,12 +73,28 @@ insert into suppliers ( name, address, city, state, zipCode, phoneNum, email, pa
 	values( 'Stark Winter Gear', '180 Westeros St', 'Donora', 'PA', 15033, 15128424900, 'ProductOrders@StarkWinterGear.com', 'End of month' );
 insert into suppliers ( name, address, city, state, zipCode, phoneNum, email, paymentTerms )
 	values( 'Valve Hats International', '212 East Jaden St', 'City 17', 'CA', 90274, 17343897473, 'PurchaseOrders@ValveHats.com', 'Cash with order' );
-
+insert into suppliers ( name, address, city, state, zipCode, phoneNum, email, paymentTerms )
+	values( 'Summer Days Clothing and Fabric Co.', '19 Main St', 'Rye', 'NY', 10580, 19149214365, 'PurchaseOrders@SumerDays.com', 'Cash on delivery' );
+insert into suppliers ( name, address, city, state, zipCode, phoneNum, email, paymentTerms )
+	values( 'Harbor Light Clothing Company', '21 Mountain Drive', 'Stamford', 'CT', 06901, 16017829844, 'PurchaseOrders@HarborLightClothes.com', 'End of month' );
 
 -- PurchaseOrders --
 insert into purchaseOrders ( purchaseOrderNum, supplier, sku, skuQuantity, skuPurchasePriceUSD, date, comments )
 	values( 'p0012', 'American Eagle Outfitters', 's007', 125, 30.00, '2013-04-12', 'No comments for this order.' );
-
+insert into purchaseOrders ( purchaseOrderNum, supplier, sku, skuQuantity, skuPurchasePriceUSD, date, comments )
+	values( 'p0013', 'Valve Hats International', 's002', 50, 7.50, '2013-12-12', 'N/A' );
+insert into purchaseOrders ( purchaseOrderNum, supplier, sku, skuQuantity, skuPurchasePriceUSD, date, comments )
+	values( 'p0016', 'American Eagle Outfitters', 's007', 100, 30.00, '2014-04-10', 'No comments for this order.' );
+insert into purchaseOrders ( purchaseOrderNum, supplier, sku, skuQuantity, skuPurchasePriceUSD, date, comments )
+	values( 'p0017', 'Harbor Light Clothing Company', 's001', 150, 20.00, '2014-06-20', 'N/A' );
+insert into purchaseOrders ( purchaseOrderNum, supplier, sku, skuQuantity, skuPurchasePriceUSD, date, comments )
+	values( 'p0018', 'Harbor Light Clothing Company', 's005', 200, 25.00, '2014-06-20', 'N/A' );
+insert into purchaseOrders ( purchaseOrderNum, supplier, sku, skuQuantity, skuPurchasePriceUSD, date, comments )
+	values( 'p0020', 'Summer Days Clothing and Fabric Co.', 's001', 50, 25.00, '2014-08-04', 'N/A' );
+insert into purchaseOrders ( purchaseOrderNum, supplier, sku, skuQuantity, skuPurchasePriceUSD, date, comments )
+	values( 'p0021', 'Gap', 's007', 50, 30.00, '2015-01-15', 'N/A' );
+insert into purchaseOrders ( purchaseOrderNum, supplier, sku, skuQuantity, skuPurchasePriceUSD, date, comments )
+	values( 'p0023', 'American Eagle Outfitters', 's007', 125, 30.00, '2015-04-06', 'No comments for this order.'  );
 
 -- Question 5
 -- Query to calculate how many of a given sku are being sold.
