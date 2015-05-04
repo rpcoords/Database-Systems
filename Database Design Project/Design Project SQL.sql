@@ -506,12 +506,6 @@ language plpgsql;
 
 ----------------------------------------------------------------------------------------
 
--- Triggers --
-
-
-
-----------------------------------------------------------------------------------------
-
 -- Security --
 
 -- drops all role
@@ -520,7 +514,7 @@ drop role if exists player;
 drop role if exists publicUser;
 
 -- Admin role
--- Given all priveledges for database maintenance
+-- Given all privileges for database maintenance
 create role admin;
 grant insert, update, delete, select on all tables in schema public to admin;
 
