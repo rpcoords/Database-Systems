@@ -527,7 +527,7 @@ grant select on all tables in schema public to player;
 grant insert, delete on characters to player;
 grant insert, delete on choices to player;
 
--- Public role
+-- PublicUser role
 -- Can only view all tables in database
 create role publicUser;
 grant select on all tables in schema public to publicUser;
